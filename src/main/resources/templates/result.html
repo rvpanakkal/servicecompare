@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container my-2" align="center">
+
+		<h3>Test Run Results</h3>
+		<!-- <a th:href="@{/addnew}" class="btn btn-primary btn-sm mb-3">Add
+			Employee</a> -->
+		<p th:each="result:${results}">
+			<h4 th:text="${result.suiteName}"></h4>
+			<table style="width: 80%" border="1"
+				class="table table-striped table-responsive-md">
+				<thead>
+					<tr>
+						<th>Test Case</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="testCase:${result.caseResult}">
+						<td th:text="${testCase.testCaseName}"></td>
+						<td th:text="${testCase.status}"></td>
+						<!-- <td><a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}"
+							class="btn btn-primary">Update</a> <a
+							th:href="@{/deleteEmployee/{id}(id=${employee.id})}"
+							class="btn btn-danger">Delete</a></td> -->
+					</tr>
+				</tbody>
+			</table>
+		</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+testSuite: 
+  id: 1
+  name: "Eligibility"
+  testCases: 
+    -
+      id: 1
+      name: "mcId"
+      controlTestDetails:
+        url: "http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/${year}/${month}/${day}"
+        httpMethod: "GET"
+        headers:
+          apiKey: "no-key"
+      autTestDetails:
+        url: "http://calapi.inadiutorium.cz/api/v0/en/calendars/czech/${year}/${month}/${day}"
+        httpMethod: "GET"
+        headers:
+          apiKey: "no-key"
+     
+    -  
+      id: 1
+      name: "mbrUid"
+      controlTestDetails:
+        url: "http://calapi.inadiutorium.cz/api/v0/en/calendars/general-en/${year}/${month}/${day}"
+        httpMethod: "GET"
+        headers:
+          apiKey: "no-key"
+      autTestDetails:
+        url: "http://calapi.inadiutorium.cz/api/v0/en/calendars/czech/${year}/${month}/${day}"
+        httpMethod: "GET"
+        headers:
+          apiKey: "no-key"
